@@ -113,8 +113,84 @@ lr.fit(X_train_scaled, y_train)
 y_pred_lr = lr.predict(X_test_scaled)
 
 ##  K-NEAREST NEIGHBORS
+```
+from sklearn.neighbors import KNeighborsClassifier
+
+knn = KNeighborsClassifier(n_neighbors=5)
+
+knn.fit(X_train_scaled, y_train)
+
+y_pred_knn = knn.predict(X_test_scaled)
+```
+## DECISION TREE
+```
+from sklearn.tree import DecisionTreeClassifier
+
+dt = DecisionTreeClassifier(
+    random_state=42
 )
 
+dt.fit(X_train, y_train)
+
+y_pred_dt = dt.predict(X_test)
+```
+## RANDOM FOREST
+```
+from sklearn.ensemble import RandomForestClassifier
+
+rf = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42
+)
+
+rf.fit(X_train, y_train)
+
+y_pred_rf = rf.predict(X_test)
+```
+## SUPPORT VECTOR MACHINE
+```
+from sklearn.svm import SVC
+
+svm = SVC(kernel="rbf")
+
+svm.fit(X_train_scaled, y_train)
+
+y_pred_svm = svm.predict(X_test_scaled)
+## GRADIENT BOOSTING
+from sklearn.ensemble import GradientBoostingClassifier
+
+gb = GradientBoostingClassifier(
+    random_state=42
+)
+
+gb.fit(X_train, y_train)
+
+y_pred_gb = gb.predict(X_test)
+```
+## MODEL EVALUATION
+The models can be evaluated using:
+•	Accuracy 
+•	Precision 
+•	Recall 
+•	F1-score 
+•	Confusion Matrix 
+## Code
+```
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score
+)
+
+## Code
+```
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score
+)
 models = {
     "Logistic Regression": y_pred_lr,
     "KNN": y_pred_knn,
@@ -123,7 +199,6 @@ models = {
     "SVM": y_pred_svm,
     "Gradient Boosting": y_pred_gb
 }
-
 for name, prediction in models.items():
 
     print(name)
@@ -161,9 +236,6 @@ plt.ylabel("Actual")
 plt.title("Confusion Matrix - Random Forest")
 plt.show()
 
-
 # RESULT
-Thus, machine learning classification models were successfully applied for heart disease prediction, and their performance was compared using standard classification evaluation metrics.
-
-
+Thus, machine learning classification models were successfully applied for heart disease 
 
