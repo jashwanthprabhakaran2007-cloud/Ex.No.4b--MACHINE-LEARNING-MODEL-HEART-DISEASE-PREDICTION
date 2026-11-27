@@ -73,7 +73,6 @@ y = df["target"]
 •	X → Patient characteristics. 
 •	y → Heart disease prediction. 
 ###  TRAIN-TEST SPLIT
-```
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(
@@ -182,15 +181,6 @@ from sklearn.metrics import (
     recall_score,
     f1_score
 )
-
-## Code
-```
-from sklearn.metrics import (
-    accuracy_score,
-    precision_score,
-    recall_score,
-    f1_score
-)
 models = {
     "Logistic Regression": y_pred_lr,
     "KNN": y_pred_knn,
@@ -207,17 +197,17 @@ for name, prediction in models.items():
     print("Recall   :", recall_score(y_test, prediction))
     print("F1 Score :", f1_score(y_test, prediction))
     print()
-```
 ## MODEL COMPARISON
-<img width="591" height="191" alt="image" src="https://github.com/user-attachments/assets/6bb058f3-4231-475d-92d1-2e64233ac6a0" />
+<img width="643" height="460" alt="image" src="https://github.com/user-attachments/assets/78cb3650-3900-4884-a1e7-3db702052fae" />
+
 Comparison
 •	Higher Accuracy → Better overall classification. 
 •	Higher Precision → Fewer false-positive predictions. 
 •	Higher Recall → Better identification of patients with heart disease. 
 •	Higher F1-score → Better balance between precision and recall. 
 For a medical prediction task, recall is particularly important because missing a patient who actually has the condition can be more concerning than generating an extra positive prediction.
+
 ## CONFUSION MATRIX
-```py
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -234,8 +224,12 @@ sns.heatmap(
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix - Random Forest")
+
 plt.show()
 
-# RESULT
-Thus, machine learning classification models were successfully applied for heart disease 
+## CONCLUSION
+Thus, machine learning classification models were successfully applied for heart disease prediction, and their performance was compared using standard classification evaluation metrics.
+
+
+
 
